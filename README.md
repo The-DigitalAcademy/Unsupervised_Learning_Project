@@ -3,8 +3,11 @@
 
 ## Table of Contents
 * General Info
+
 * Technologies Used
+
 * Features
+
 * Project Status
 
 ## General Information
@@ -16,7 +19,7 @@
 - Power BI
 - Tableau
 
-## Features
+# Features
 - ID - Shows a unique identificator of a customer.	
 - Age - The age of the customer in years, calculated as current year minus the year of birth of the customer at the time of creation of the dataset				
         18 Min value (the lowest age observed in the dataset)							
@@ -47,5 +50,5 @@
                     1	mid-sized city	
                     2	big city	
 
-##Project Status
+#Project Status
 - In progress

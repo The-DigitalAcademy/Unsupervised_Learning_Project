@@ -1,5 +1,5 @@
 # Project Name
-> UNSUPERVISED LEARNING
+> UNSUPERVISED LEARNING (CLUSTERING)
 
 ## Table of Contents
 * General Info

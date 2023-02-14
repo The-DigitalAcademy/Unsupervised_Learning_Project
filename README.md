@@ -50,5 +50,5 @@
                     1	mid-sized city	
                     2	big city	
 
-#Project Status
+# Project Status
 - In progress

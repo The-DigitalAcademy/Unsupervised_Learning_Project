@@ -3,11 +3,8 @@
 
 ## Table of Contents
 * General Info
-
 * Technologies Used
-
 * Features
-
 * Project Status
 
 ## General Information

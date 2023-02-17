@@ -49,7 +49,7 @@ DATA work.SEGM;
  SELECT;
  WHEN (Occupation = 0) occupation_  = 'unemployed';
  WHEN (Occupation = 1) occupation_ = 'skilled_employee';
- OTHERWISE occupation_ = 'self_employed'; 
+ OTHERWISE occupation_ = 'professionals'; 
 END;
 run;
 
@@ -74,15 +74,35 @@ DATA work.SEGM;
 END;
 run;
 
-
 data work.segm;
 set work.segm;
 drop occupation sex 'marital status'n 'settlement size'n age education;
 run;
 
-title'Distributing the counting of gender';
+title'Counting number of customers by gender';
 proc sgplot data=WORK.SEGM;
 	vbar gender / datalabel;
+	yaxis grid;
+run;
+
+title'Ditributing average income by age group';
+proc sgplot data=WORK.SEGM;
+format income dollar12.2;
+	vbar age_range / response=Income stat=mean datalabel;
+	yaxis grid;
+run; 
+
+title'Ditributing average income by settlement size';
+proc sgplot data=WORK.SEGM;
+format income dollar12.2;
+	vbar city_size / response=Income stat=mean datalabel;
+	yaxis grid;
+run;
+
+title'Ditributing average income by occupation';
+proc sgplot data=WORK.SEGM;
+format income dollar12.2;
+	vbar occupation_ / response=Income stat=mean datalabel;
 	yaxis grid;
 run;
 
@@ -126,9 +146,21 @@ proc sgplot data=WORK.SEGM;
 	yaxis grid;
 run;
 
-title'Distribution of qualification by city size';
+title'Distribution of qaulification by city size';
 proc sgplot data=WORK.SEGM;
-	vbar city_size / group=qualification groupdisplay=cluster datalabel;
+	vbar qualification / group=city_size groupdisplay=cluster datalabel;
+	yaxis grid;
+run;
+
+title'Distribution of age group by city size';
+proc sgplot data=WORK.SEGM;
+	vbar age_range / group=city_size groupdisplay=cluster datalabel;
+	yaxis grid;
+run;
+
+title'Distribution of marital status by occupation';
+proc sgplot data=WORK.SEGM;
+	vbar marital_stat / group=occupation_ groupdisplay=cluster;
 	yaxis grid;
 run;
 
